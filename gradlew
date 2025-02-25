@@ -5,6 +5,168 @@ android {
     }
 }
 
+class Fragment1 : Fragment() {
+
+    private var _binding: Fragment1Binding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = Fragment1Binding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        
+        val text = arguments?.getString("text") ?: "Fragment 1"
+        val color = arguments?.getInt("color") ?: Color.RED
+        
+        binding.textView.text = text
+        binding.root.setBackgroundColor(color)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
+
+class Fragment2 : Fragment() {
+
+    private var _binding: Fragment2Binding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = Fragment1Binding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        
+        val text = arguments?.getString("text") ?: "Fragment 2"
+        val color = arguments?.getInt("color") ?: Color.RED
+        
+        binding.textView.text = text
+        binding.root.setBackgroundColor(color)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
+
+class Fragment3 : Fragment() {
+
+    private var _binding: Fragment1Binding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = Fragment3Binding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        
+        val text = arguments?.getString("text") ?: "Fragment 3"
+        val color = arguments?.getInt("color") ?: Color.RED
+        
+        binding.textView.text = text
+        binding.root.setBackgroundColor(color)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
+
+class Fragment4 : Fragment() {
+
+    private var _binding: Fragment4Binding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = Fragment4Binding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        
+        val text = arguments?.getString("text") ?: "Fragment 4"
+        val color = arguments?.getInt("color") ?: Color.RED
+        
+        binding.textView.text = text
+        binding.root.setBackgroundColor(color)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
+
+class Fragment5 : Fragment() {
+
+    private var _binding: Fragment5Binding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = Fragment5Binding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        
+        val text = arguments?.getString("text") ?: "Fragment 5"
+        val color = arguments?.getInt("color") ?: Color.RED
+        
+        binding.textView.text = text
+        binding.root.setBackgroundColor(color)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Attempt to set APP_HOME
 # Resolve links: $0 may be a link
 PRG="$0"
