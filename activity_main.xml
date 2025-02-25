@@ -27,5 +27,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Вперед" />
+
+    binding.btnChangeColor.setOnClickListener {
+    val randomColor = Color.rgb(
+        (0..255).random(),
+        (0..255).random(),
+        (0..255).random()
+    )
+    binding.root.setBackgroundColor(randomColor)
+}
     </LinearLayout>
+    
 </LinearLayout>
+
