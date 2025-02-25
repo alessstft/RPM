@@ -1,0 +1,41 @@
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private val fragmentList = listOf(
+        Fragment1::class.java,
+        Fragment2::class.java,
+        Fragment3::class.java,
+        Fragment4::class.java,
+        Fragment5::class.java
+    )
+    private var currentFragmentIndex = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        supportFragmentManager.fragmentFactory = CustomFragmentFactory()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        loadFragment(fragmentList[currentFragmentIndex])
+
+        binding.btnNext.setOnClickListener {
+            if (currentFragmentIndex < fragmentList.size - 1) {
+                currentFragmentIndex++
+                loadFragment(fragmentList[currentFragmentIndex])
+            }
+        }
+
+        binding.btnPrevious.setOnClickListener {
+            if (currentFragmentIndex > 0) {
+                currentFragmentIndex--
+                loadFragment(fragmentList[currentFragmentIndex])
+            }
+        }
+    }
+
+    private fun loadFragment(fragmentClass: Class<out Fragment>) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragmentClass, null)
+            .commit()
+    }
+}
