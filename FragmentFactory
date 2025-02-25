@@ -1,0 +1,38 @@
+class CustomFragmentFactory : FragmentFactory() {
+
+    override fun instantiate(classLoader: ClassLoader, className: String): Fragment {
+        return when (className) {
+            Fragment1::class.java.name -> Fragment1().apply {
+                arguments = Bundle().apply {
+                    putString("text", "Fragment 1")
+                    putInt("color", Color.RED)
+                }
+            }
+            Fragment2::class.java.name -> Fragment2().apply {
+                arguments = Bundle().apply {
+                    putString("text", "Fragment 2")
+                    putInt("color", Color.BLUE)
+                }
+            }
+            Fragment3::class.java.name -> Fragment3().apply {
+                arguments = Bundle().apply {
+                    putString("text", "Fragment 3")
+                    putInt("color", Color.GREEN)
+                }
+            }
+            Fragment4::class.java.name -> Fragment4().apply {
+                arguments = Bundle().apply {
+                    putString("text", "Fragment 4")
+                    putInt("color", Color.YELLOW)
+                }
+            }
+            Fragment5::class.java.name -> Fragment5().apply {
+                arguments = Bundle().apply {
+                    putString("text", "Fragment 5")
+                    putInt("color", Color.MAGENTA)
+                }
+            }
+            else -> super.instantiate(classLoader, className)
+        }
+    }
+}
